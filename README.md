@@ -19,7 +19,7 @@ git pull origin master
 5. jika sudah. maka source code yang ada di github akan terunduh secara otomatis dan kalian bisa bekerja.
 6. jika kalian sudah selesai coding jangan lupa ketik peritah berikut, agar source yang kalian kerjakan bisa terupload  : 
 ```shell
-git push origin master
+git pull origin master
 git push origin master
 ```
 *gunakan username dan password yang telah diberikan
