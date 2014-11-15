@@ -5,7 +5,7 @@
 
     <body>
 
-        <ui:composition template="./template.xhtml"
+        <ui:composition template="./templates/template.xhtml"
                         xmlns:ui="http://java.sun.com/jsf/facelets"
                         xmlns:h="http://java.sun.com/jsf/html"
                         xmlns:p="http://primefaces.org/ui"
@@ -32,7 +32,9 @@
                             <p:menuitem value="Seksi Keselamatan Berlayar"/>
                             <p:menuitem value="Seksi Penjagaan, Patroli dan Penyidikan"/>
                         </p:submenu>
-                        <p:submenu label="Setting" icon="ui-icon-wrench"></p:submenu>
+                        <p:submenu label="Setting" icon="ui-icon-wrench">
+                            <p:menuitem value="User Management" url="faces/setting/users/index.xhtml"/>
+                        </p:submenu>
                         
                         <f:facet name="options">
                             <p:commandButton action="#{UsersController.logout}" ajax="false" value="Logout" icon="ui-icon-extlink" />

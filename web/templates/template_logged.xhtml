@@ -5,7 +5,7 @@
 
     <body>
 
-        <ui:composition template="./templates/template.xhtml"
+        <ui:composition template="./template.xhtml"
                         xmlns:ui="http://java.sun.com/jsf/facelets"
                         xmlns:h="http://java.sun.com/jsf/html"
                         xmlns:p="http://primefaces.org/ui"
@@ -16,7 +16,7 @@
                 <h:form>
                     <p:growl id="messages"/>
                     <p:menubar>
-                        <p:menuitem icon="ui-icon-home"></p:menuitem>
+                        <p:menuitem icon="ui-icon-home" url="/"></p:menuitem>
                         <p:menuitem value="Loket" icon="ui-icon-mail-closed"></p:menuitem>
                         <p:menuitem value="Tata Usaha" icon="ui-icon-note"></p:menuitem>
                         <p:submenu label="Bidang Lala dan Usaha Kepelabuhanan" icon="ui-icon-document">
@@ -41,9 +41,7 @@
                         </f:facet>
                     </p:menubar>
                     <hr/>
-                    <div class="">
-                        <p>Welcome, #{UsersController.username}</p>
-                    </div>
+                    <ui:insert name="content_detail">Content</ui:insert>
                 </h:form>
             </ui:define>
 
