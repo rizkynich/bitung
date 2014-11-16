@@ -13,8 +13,11 @@ import abstracts.EntityBase;
 import abstracts.DataAccess;
 import entity.Users;
 import java.util.List;
+import net.sf.ehcache.hibernate.HibernateUtil;
 import org.hibernate.Hibernate;
 import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.cfg.Configuration;
 
 public class UserDao extends EntityBase implements DataAccess<Users> {
 
@@ -44,10 +47,31 @@ public class UserDao extends EntityBase implements DataAccess<Users> {
 
     @Override
     public List<Users> getAll() {
+//        List<Users> list_cust = null;
+//        factory = new Configuration().configure().buildSessionFactory();
+//        Session xses = factory.openSession();
+//        String sql = "FROM Users";
+//        xses.beginTransaction();
+//        list_cust = xses.createQuery(sql).list();
+//        xses.beginTransaction().commit();
+//        try{
+//            for (Users cp : list_cust) {
+//                Hibernate.initialize(cp);
+//                //or cp.getCustomer().getLoginName();
+//            }
+//        }catch(Exception e){
+//            xses.beginTransaction().rollback();
+//        }
+//        xses.close();
         connect();
-        List<Users> userList = session.createQuery("from Users").list();
+        Query query = session.createQuery("from Users");
+        List<Users> dataList = query.list();
+        for (Users cp : dataList) {
+            Hibernate.initialize(cp.getLevel());
+            //or cp.getCustomer().getLoginName();
+        }
         disconnect();
-        return userList;
+        return dataList;
     }
 
     @Override

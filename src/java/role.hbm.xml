@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="entity.Role" table="role">
+    <id name="id">
+        <generator class="increment"/>
+    </id>
+
+    <property name="role_name">
+        <column name="role_name"/>
+    </property>
+
+    <property name="role_desc">
+        <column name="role_desc"/>
+    </property>
+    
+    <set name="users" table="users" inverse="true" lazy="true" fetch="select">
+        <key>
+            <column name="id" not-null="true" />
+        </key>
+        <one-to-many class="entity.Users" />
+    </set>
+  </class>
+</hibernate-mapping>

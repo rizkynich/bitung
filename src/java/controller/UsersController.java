@@ -15,11 +15,14 @@ import dao.UserDao;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
+import org.primefaces.context.RequestContext;
 
 @ManagedBean(name="UsersController")
 @RequestScoped
@@ -30,13 +33,33 @@ public class UsersController {
     UserDao userDao = new UserDao();
     String username;
     String password;
-    
+    Users userInfo = new Users();
+    Users newUser;
+        
     public UsersController(){
         userList = userDao.getAll();
+        newUser = new Users();
+    }
+
+    public Users getNewUser() {
+        return newUser;
+    }
+
+    public void setNewUser(Users newUser) {
+        this.newUser = newUser;
+    }
+    
+    public String doSave(){
+        userDao.insert(newUser);
+        FacesMessage message = new FacesMessage("Data berhasil ditambahkan");
+        message.setSeverity((FacesMessage.SEVERITY_INFO));
+        
+        FacesContext.getCurrentInstance().addMessage(null, message);
+        return "user.list?faces-redirect=true";
     }
     
     public String displayAll(){
-        return "index";
+        return "home";
     }
 
     public List<Users> getUserList() {
@@ -79,25 +102,46 @@ public class UsersController {
         this.password = password;
     }
     
+    public Users getUserInfo(){
+        Users userInfo = (Users) Util.getUserInfo();
+        return userInfo;
+    }
+    
+    
     public String loginSystem(){
         users = userDao.login(username, password);
         if(users != null){
             HttpSession sesiUser = Util.getSession();
             sesiUser.setAttribute("userInfo", users);
-            return "home";
+            return "home?faces-redirect=true";
         } else {        
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN,"Invalid Login!","Please Try Again!"));
-            return "index";
+            return "login";
         }
     }
     
     public String logout(){
         HttpSession sesiUser = Util.getSession();
         sesiUser.invalidate();
-        return "index?faces-redirect=true";
+        return "login?faces-redirect=true";
     }
     
     public void coomingsoon(){
         Util.addMessage("Menu ini akan tampil \n pada pekerjaan mendatang","");
+    }
+     
+    public void formAdd() {
+        try {
+            RequestContext.getCurrentInstance().openDialog("user.add");
+            System.out.println("Show dialog");
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+//        Map<String,Object> options = new HashMap<String, Object>();
+//        options.put("modal", true);
+//        options.put("draggable", false);
+//        options.put("resizable", false);
+//        options.put("contentHeight", 320);
+//        RequestContext.getCurrentInstance().openDialog("user.add", options, null);
     }
 }

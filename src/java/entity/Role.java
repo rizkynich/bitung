@@ -6,6 +6,8 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,15 +18,14 @@ import javax.persistence.Id;
  * @author qq
  */
 @Entity
-public class Users implements Serializable {
+public class Role implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private String username;
-    private String user_fullname;
-    private String password;
-    private Role level;
+    public Long id;
+    public String role_name;
+    private String role_desc;
+    private Set<Users> users = new HashSet<Users>(0);
 
     public Long getId() {
         return id;
@@ -34,39 +35,30 @@ public class Users implements Serializable {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getRole_name() {
+        return role_name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setRole_name(String role_name) {
+        this.role_name = role_name;
     }
 
-    public String getUser_fullname() {
-        return user_fullname;
+    public String getRole_desc() {
+        return role_desc;
     }
 
-    public void setUser_fullname(String user_fullname) {
-        this.user_fullname = user_fullname;
+    public void setRole_desc(String role_desc) {
+        this.role_desc = role_desc;
     }
 
-    public String getPassword() {
-        return password;
+    public Set<Users> getUsers() {
+        return users;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUsers(Set<Users> users) {
+        this.users = users;
     }
 
-    public Role getLevel() {
-        return level;
-    }
-
-    public void setLevel(Role level) {
-        this.level = level;
-    }
-
-    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -77,10 +69,10 @@ public class Users implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Users)) {
+        if (!(object instanceof Role)) {
             return false;
         }
-        Users other = (Users) object;
+        Role other = (Role) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -89,7 +81,7 @@ public class Users implements Serializable {
 
     @Override
     public String toString() {
-        return "entity.users[ id=" + id + " ]";
+        return "entity.Role[ id=" + id + " ]";
     }
     
 }

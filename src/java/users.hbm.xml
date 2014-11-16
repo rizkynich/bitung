@@ -18,8 +18,12 @@
             <column name="user_fullname"/>
         </property>
         
-        <property name="level">
+<!--        <property name="level">
             <column name="level"/>
-        </property>
+        </property>-->
+        
+        <many-to-one name="level" class="entity.Role" fetch="select">
+            <column name="level" not-null="true"/>
+        </many-to-one>
     </class>
 </hibernate-mapping>

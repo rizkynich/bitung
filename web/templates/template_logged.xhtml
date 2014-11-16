@@ -16,24 +16,45 @@
                 <h:form>
                     <p:growl id="messages"/>
                     <p:menubar>
-                        <p:menuitem icon="ui-icon-home" url="/"></p:menuitem>
+                        <p:menuitem icon="ui-icon-home" url="/home.xhtml"></p:menuitem>
                         <p:menuitem value="Loket" icon="ui-icon-mail-closed"></p:menuitem>
                         <p:menuitem value="Tata Usaha" icon="ui-icon-note"></p:menuitem>
                         <p:submenu label="Bidang Lala dan Usaha Kepelabuhanan" icon="ui-icon-document">
-                            <p:menuitem value="Seksi Lalu Lintas dan Angkutan Laut"/>
+                            <p:submenu label="Seksi Lalu Lintas dan Angkutan Laut">
+                                <p:menuitem value="Kedatangan Kapal" url="./lala.kedatangan.add.xhtml"/>
+                                <p:menuitem value="Keberangkatan Kapal" url="./lala.keberangkatan.add.xhtml"/>
+                                <p:menuitem value="Laporan Angkutan Barang" url="./lala.lab.add.xhtml"/>
+                                <p:menuitem value="RKBM" url="./lala.rkbm.add.xhtml"/>
+                                <p:menuitem value="Management PBM dan TKBM" url="./lala.pmb.add.xhtml"/>
+                                <p:menuitem value="Management JPT" url="./lala.jpt.add.xhtml"/>
+                            </p:submenu>
                             <p:menuitem value="Seksi Perencanaan dan Pebangunan" actionListener="#{UsersController.coomingsoon}" update="messages"/>
                             <p:menuitem value="Seksi Bimbingan Usaha dan Jasa Kepelabuhanan" actionListener="#{UsersController.coomingsoon}" update="messages"/>
                         </p:submenu>
                         <p:submenu label="Bidang Status Hukum dan Sertifikasi Kapal" icon="ui-icon-script">
-                            <p:menuitem value="Status Hukum"/>
-                            <p:menuitem value="Sertifikasi Kapal"/>
+                            <p:menuitem value="Status Hukum" actionListener="#{UsersController.coomingsoon}" update="messages"/>
+                            <p:submenu label="Sertifikasi Kapal">
+                                <p:menuitem value="Sertifikasi Konstruksi Kapal" url="./sertifikat.konstruksi.add.xhtml"/>
+                                <p:menuitem value="Sertifikasi Keselamatan Kapal Penumpang" url="./sertifikat.keselamatan.add.xhtml"/>
+                                <p:menuitem value="Sertifikasi Perlengkapan Kapal Barang" url="./sertifikat.perlengkapan.add.xhtml"/>
+                                <p:menuitem value="Sertifikasi Radio" url="./sertifikat.radio.add.xhtml"/>
+                            </p:submenu>
                         </p:submenu>
                         <p:submenu label="Bidang Keselamatan Beralayar, Penjagaan dan Patroli" icon="ui-icon-flag">
-                            <p:menuitem value="Seksi Keselamatan Berlayar"/>
-                            <p:menuitem value="Seksi Penjagaan, Patroli dan Penyidikan"/>
+                            <p:submenu label="Seksi Keselamatan Berlayar">
+                                <p:menuitem value="SPB" url="./keselamatan..add.xhtml"/>
+                                <p:menuitem value="SPOG" url="./keselamatan..add.xhtml"/>
+                                <p:menuitem value="Ship to Ship" url="./keselamatan..add.xhtml"/>
+                                <p:menuitem value="Menggandeng" url="./keselamatan..add.xhtml"/>
+                                <p:menuitem value="Pengisian Bahan Bakar" url="./keselamatan..add.xhtml"/>
+                                <p:menuitem value="Muatan Gladak"/>
+                                <p:menuitem value="Muat Barang Berbahaya"/>
+                                <p:menuitem value="Bongkar Barang Berbahaya"/>
+                            </p:submenu>
+                            <p:menuitem value="Seksi Penjagaan, Patroli dan Penyidikan" actionListener="#{UsersController.coomingsoon}" update="messages"></p:menuitem>
                         </p:submenu>
                         <p:submenu label="Setting" icon="ui-icon-wrench">
-                            <p:menuitem value="User Management" url="faces/setting/users/index.xhtml"/>
+                            <p:menuitem value="User Management" url="./user.list.xhtml"/>
                         </p:submenu>
                         
                         <f:facet name="options">

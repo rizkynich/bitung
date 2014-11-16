@@ -5,46 +5,17 @@
 
     <body>
 
-        <ui:composition template="./templates/template.xhtml"
+        <ui:composition template="./templates/template_logged.xhtml"
                         xmlns:ui="http://java.sun.com/jsf/facelets"
                         xmlns:h="http://java.sun.com/jsf/html"
                         xmlns:p="http://primefaces.org/ui"
                         xmlns:f="http://java.sun.com/jsf/core"
                         xmlns:c="http://java.sun.com/jsp/jstl/core">
 
-            <ui:define name="content">
-                <h:form>
-                    <p:growl id="messages"/>
-                    <p:menubar>
-                        <p:menuitem icon="ui-icon-home"></p:menuitem>
-                        <p:menuitem value="Loket" icon="ui-icon-mail-closed"></p:menuitem>
-                        <p:menuitem value="Tata Usaha" icon="ui-icon-note"></p:menuitem>
-                        <p:submenu label="Bidang Lala dan Usaha Kepelabuhanan" icon="ui-icon-document">
-                            <p:menuitem value="Seksi Lalu Lintas dan Angkutan Laut"/>
-                            <p:menuitem value="Seksi Perencanaan dan Pebangunan" actionListener="#{UsersController.coomingsoon}" update="messages"/>
-                            <p:menuitem value="Seksi Bimbingan Usaha dan Jasa Kepelabuhanan" actionListener="#{UsersController.coomingsoon}" update="messages"/>
-                        </p:submenu>
-                        <p:submenu label="Bidang Status Hukum dan Sertifikasi Kapal" icon="ui-icon-script">
-                            <p:menuitem value="Status Hukum"/>
-                            <p:menuitem value="Sertifikasi Kapal"/>
-                        </p:submenu>
-                        <p:submenu label="Bidang Keselamatan Beralayar, Penjagaan dan Patroli" icon="ui-icon-flag">
-                            <p:menuitem value="Seksi Keselamatan Berlayar"/>
-                            <p:menuitem value="Seksi Penjagaan, Patroli dan Penyidikan"/>
-                        </p:submenu>
-                        <p:submenu label="Setting" icon="ui-icon-wrench">
-                            <p:menuitem value="User Management" url="faces/setting/users/index.xhtml"/>
-                        </p:submenu>
-                        
-                        <f:facet name="options">
-                            <p:commandButton action="#{UsersController.logout}" ajax="false" value="Logout" icon="ui-icon-extlink" />
-                        </f:facet>
-                    </p:menubar>
-                    <hr/>
-                    <div class="">
-                        <p>Welcome, #{UsersController.username}</p>
-                    </div>
-                </h:form>
+            <ui:define name="content_detail">
+                <div class="">
+                    <p>Welcome, #{UsersController.userInfo.user_fullname}</p>
+                </div>
             </ui:define>
 
         </ui:composition>

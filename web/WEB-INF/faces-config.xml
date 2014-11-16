@@ -5,9 +5,22 @@
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 
     <!-- Mengatur controller -->
+    <converter>
+        <converter-id>roleConverter</converter-id>
+        <converter-class>util.RoleConverter</converter-class>
+    </converter>
+
     <managed-bean>
         <managed-bean-name>UsersController</managed-bean-name>
         <managed-bean-class>controller.UsersController</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    
+    <navigation-rule>
+        <from-view-id>/</from-view-id>
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/home.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
