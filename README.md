@@ -8,8 +8,7 @@ Ini cara untuk melakukan colaborasi code program :
 3. Buat direktori / folder project bitung di mana saja bebas.
 4. ketik perintah berikut pada direktori / folder project kalian :
 ```shell
-git init
-git add .
+git clone https://github.com/rizkynich/bitung
 git remote add origin https://github.com/rizkynich/bitung
 git remote -v
 git pull origin master
