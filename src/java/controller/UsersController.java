@@ -55,7 +55,7 @@ public class UsersController {
         message.setSeverity((FacesMessage.SEVERITY_INFO));
         
         FacesContext.getCurrentInstance().addMessage(null, message);
-        return "user.list?faces-redirect=true";
+        return "user.list";
     }
     
     public String displayAll(){

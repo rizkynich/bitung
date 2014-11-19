@@ -27,7 +27,7 @@
                         <p:inputText value="#{UsersController.newUser.user_fullname}" required="true" requiredMessage="Please Enter Name!" />
 
                         <h:outputText value="Role:"  />
-                        <p:selectOneMenu id="role" value="#{selectOneMenuView.role}" converter="roleConverter" panelStyle="width:180px"
+                        <p:selectOneMenu id="role" value="#{UsersController.newUser.level}" converter="roleConverter" panelStyle="width:180px"
                                          effect="fade" var="t" style="width:160px" filter="true" filterMatchMode="startsWith">
                             <f:selectItems value="#{selectOneMenuView.roles}" var="role" itemLabel="#{role.role_name}" itemValue="#{role}" />
                             <p:column>

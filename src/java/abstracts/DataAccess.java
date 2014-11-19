@@ -23,10 +23,8 @@ public interface DataAccess<T> extends Serializable {
     
     public List<T> getAll();
     
-    public T getById(int id);
-    
-    public T getById(String id);
-    
+    public T getById(Long id);
+        
     public List<T> getByProperty(String name, Object value);
     
     public List<T> search(String name, Object value);

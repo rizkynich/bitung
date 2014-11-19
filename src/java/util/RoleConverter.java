@@ -23,12 +23,12 @@ import javax.faces.convert.FacesConverter;
 public class RoleConverter implements Converter {
  
     public Object getAsObject(FacesContext fc, UIComponent uic, String value) {
-        System.out.println("data role " + value);
         if(value != null && value.trim().length() > 0) {
             try {
                 RoleDao service = (RoleDao) fc.getExternalContext().getApplicationMap().get("roleService");
                 //return service.getAll().get(Integer.parseInt(value));
-                return service.getById(value);
+                System.out.println("Data : " + value);
+                return service.getById(Long.parseLong(value));
             } catch(NumberFormatException e) {
                 throw new ConverterException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Conversion Error", "Not a valid role."));
             }

@@ -15,10 +15,12 @@ import entity.Role;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import org.hibernate.Query;
 
 @ManagedBean(name="roleService", eager = true)
+@ApplicationScoped
 public class RoleDao extends EntityBase implements DataAccess<Role> {
     private Object getAll;
 
@@ -59,20 +61,7 @@ public class RoleDao extends EntityBase implements DataAccess<Role> {
     }
     
     @Override
-    public Role getById(int id) {
-        connect();
-        List<Role> dataList = getByProperty("id", id);
-        disconnect();
-        
-        if(dataList != null && dataList.size() > 0){
-            return dataList.get(0);
-        }
-        
-        return null;
-    }
-
-    @Override
-    public Role getById(String id) {
+    public Role getById(Long id) {
         connect();
         List<Role> dataList = getByProperty("id", id);
         disconnect();

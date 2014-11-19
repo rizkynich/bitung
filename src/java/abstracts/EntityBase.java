@@ -27,7 +27,12 @@ public abstract class EntityBase {
     }
     
     public final void disconnect(){
-        transaction.commit();
-        session.close();
+        if (!transaction.wasCommitted()){
+            transaction.commit();
+        }
+        
+        if(session.isOpen()){
+            session.close();
+        }
     }
 }

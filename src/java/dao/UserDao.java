@@ -75,20 +75,7 @@ public class UserDao extends EntityBase implements DataAccess<Users> {
     }
 
     @Override
-    public Users getById(int id) {
-        connect();
-        List<Users> dataList = getByProperty("id", id);
-        disconnect();
-        
-        if(dataList != null && dataList.size() > 0){
-            return dataList.get(0);
-        }
-        
-        return null;
-    }
-
-    @Override
-    public Users getById(String id) {
+    public Users getById(Long id) {
         connect();
         List<Users> dataList = getByProperty("id", id);
         disconnect();
