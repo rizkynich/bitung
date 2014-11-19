@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./templates/template_logged.xhtml">
+
+            <ui:define name="content_detail">
+                <h:form>
+                    <p:panel header="FORM SURAT PERSETUJUAN MEMUAT/MENGANGKUT BARANG BERBAHAY">
+                        <p:panelGrid>
+                            <p:row>
+                                <p:column><p:outputLabel value="NO MASUK" for="no_masuk"/></p:column>
+                                <p:column><p:inputText value="" id="no_masuk" required="true" requiredMessage="NO MASUK Harus di Isi!"/> </p:column>
+                                <p:column><p:outputLabel value="TGL MASUK" for="tgl_masuk"/> </p:column>
+                                <p:column><p:calendar id="tgl_masuk" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="TANGGAL MASUK Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="NO KELUAR" for="no_keluar"/> </p:column>
+                                <p:column><p:inputText value="" id="no_keluar" required="true" requiredMessage="NO KELUAR Harus di Isi!"/> </p:column>
+                                <p:column><p:outputLabel value="TGL KELUAR" for="tgl_masuk"/> </p:column>
+                                <p:column><p:calendar id="tgl_keluar" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="TGL KELUAR Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="AGEN" for="agen"/> </p:column>
+                                        <p:column><p:selectOneMenu id="agen" value="">
+                                                <f:selectItem itemLabel="Pilih Agen" itemValue=""/>
+                                    </p:selectOneMenu></p:column>
+                                <p:column><p:outputLabel value="KAPAL" for="kapal"/> </p:column>
+                                <p:column><p:selectOneMenu id="kapal" value="">
+                                        <f:selectItem itemLabel="Pilih Agen" itemValue=""/>
+                                    </p:selectOneMenu> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="POSISI KAPAL" for="posisi_kapal"/> </p:column>
+                                <p:column><p:inputText value="" id="posisi_kapal" required="true" requiredMessage="POSISI KAPAL Harus di Isi!"/> </p:column>
+                                <p:column><p:outputLabel value="URAIAN" for="uraian"/> </p:column>
+                                <p:column><p:inputTextarea id="uraian" widgetVar="editorWidget" value="" cols="50" required="true" requiredMessage="URAIAN Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="PEJABAT" for="pejabat"/> </p:column>
+                                <p:column><p:inputText value="" id="pejabat" required="true" requiredMessage="PEJABAT Harus di ISI!"/> </p:column>
+                                <p:column><p:outputLabel value="MENGETAHUI" for="mengetahui"/> </p:column>
+                                <p:column><p:inputTextarea id="mengetahui" widgetVar="editorWidget" value="" cols="50" required="true" requiredMessage="MENGETAHUI Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="JABATAN / GOLONGAN" for="jabatan_golongan"/> </p:column>
+                                <p:column><p:inputText value="" id="jabatan_golongan" required="true" requiredMessage="JABATAN / GOLONGAN Harus di Isi!"/> </p:column>
+                                <p:column><p:outputLabel value="NIP" for="nip"/> </p:column>
+                                <p:column><p:inputText value="" id="nip" required="true" requiredMessage="NIP Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column colspan="4"><p:commandButton value="SAVE" id="save" icon="ui-icon-disk" /><p:commandButton value="RESET" type="reset" id="reset" icon="ui-icon-disk" /></p:column>
+                            </p:row>
+                        </p:panelGrid>
+                    </p:panel>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

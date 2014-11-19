@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./templates/template_logged.xhtml">
+
+            <ui:define name="content_detail">
+                <h:form>
+                    <p:panel header="TENAGA KERJA BONGKAR MUAT">
+                        <p:panelGrid>
+                            <p:row>
+                                <p:column><p:outputLabel value="NO SURAT" for="no_surat"/></p:column>
+                                <p:column><p:inputText value="" id="no_surat" required="true" requiredMessage="NO SURAT Harus di Isi!"/> </p:column>
+                                <p:column><p:outputLabel value="TGL SURAT" for="tgl_surat"/> </p:column>
+                                <p:column><p:calendar id="tgl_surat" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="TANGGAL SURAT Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="PEKERJAAN" for="pekerjaan"/> </p:column>
+                                <p:column colspan="3"><p:selectOneMenu id="pekerjaan" value="">
+                                                <f:selectItem itemLabel="Pilih Agen" itemValue=""/>
+                                                <f:selectItem itemLabel="Bongkar" itemValue=""/>
+                                                <f:selectItem itemLabel="Muat" itemValue=""/>
+                                        </p:selectOneMenu> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="AGEN" for="agen"/></p:column>
+                                <p:column><p:inputText value="" id="agen" required="true" requiredMessage="AGEN Harus di Isi!"/> </p:column>
+                                <p:column><p:outputLabel value="KAPAL" for="kapal"/></p:column>
+                                <p:column><p:inputText value="" id="kapal" required="true" requiredMessage="KAPAL di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="TGL KERJA" for="tgl_kerja"/></p:column>
+                                <p:column><p:calendar id="tgl_kerja" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="TGL KERJA Harus di Isi!"/> </p:column>
+                                <p:column><p:outputLabel value="JUMLAH TKBM DI MINTA" for="jumlah_tkbm_diminta"/></p:column>
+                                <p:column><p:inputText value="" id="jumlah_tkbm_diminta" required="true" requiredMessage="JUMLAH TKBM DI MINTA Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column colspan="4"></p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="STEVEDORING" for="stevedoring"/></p:column>
+                                <p:column><p:inputText value="" id="stevedoring" required="true" requiredMessage="STEVEDORING Harus di Isi!"/> </p:column>
+                                <p:column><p:outputLabel value="CARGODORING" for="cargodoring"/></p:column>
+                                <p:column><p:inputText value="" id="cargodoring" required="true" requiredMessage="CARGODORING Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="DELIVERY / R" for="delivery_r"/></p:column>
+                                <p:column><p:inputText value="" id="delivery_r" required="true" requiredMessage="BENDERA Harus di Isi!"/> </p:column>
+                                <p:column><p:outputLabel value="PILOT / DRIVER" for="pilot_driver"/></p:column>
+                                <p:column><p:inputText value="" id="pilot_driver" required="true" requiredMessage="IMO Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="JUMLAH UNIT" for="jumlah_unit"/></p:column>
+                                <p:column><p:inputText value="" id="jumlah_unit" required="true" requiredMessage="JUMLAH UNIT Harus di Isi!"/> </p:column>
+                                <p:column><p:outputLabel value="JENIS BARANG" for="jenis_barang"/></p:column>
+                                <p:column><p:inputText value="" id="jenis_barang" required="true" requiredMessage="JENIS BARANG di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="JENIS KERJA" for="jenis_kerja"/> </p:column>
+                                <p:column colspan="3"><p:selectOneMenu id="jenis_kerja" value="">
+                                                <f:selectItem itemLabel="Pilih Agen" itemValue=""/>
+                                                <f:selectItem itemLabel="Truk" itemValue=""/>
+                                                <f:selectItem itemLabel="Kade Losing" itemValue=""/>
+                                        </p:selectOneMenu> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="JUMLAH BONGKAR" for="jumlah_bongkar"/></p:column>
+                                <p:column><p:inputText value="" id="jumlah_bongkar" required="true" requiredMessage="JUMLAH BONGKAR Harus di Isi!"/> </p:column>
+                                <p:column><p:outputLabel value="JUMLAH MUAT" for="jumlah_muat"/></p:column>
+                                <p:column><p:inputText value="" id="jumlah_muat" required="true" requiredMessage="JUMLAH MUAT di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="JUMLAH GANG" for="jumlah_gang"/></p:column>
+                                <p:column><p:inputText value="" id="jumlah_gang" required="true" requiredMessage="JUMLAH GANG Harus di Isi!"/> </p:column>
+                                <p:column><p:outputLabel value="JUMLAH PALKA" for="jumlah_palka"/></p:column>
+                                <p:column><p:inputText value="" id="jumlah_palka" required="true" requiredMessage="JUMLAH PPALKA di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column colspan="4"><p:commandButton value="SAVE" id="save" icon="ui-icon-disk" /><p:commandButton value="RESET" type="reset" id="reset" icon="ui-icon-disk" /></p:column>
+                            </p:row>
+                        </p:panelGrid>
+                    </p:panel>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

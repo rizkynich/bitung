@@ -12,28 +12,237 @@
 
             <ui:define name="content_detail">
                 <h:form>
-                    <f:facet name="header"/>
-                    <p:panelGrid columns="4">
-                        <h:outputText value="Nama Agen 1"/>
-                        <p:selectOneMenu>
-                            <f:selectItem itemLabel="PT RISKIA ARMANA NUSANTARA"/>
-                            <f:selectItems value="Agen 1"/>
-                            <f:selectItems value="Agen 1"/>
-                        </p:selectOneMenu>
-                        
-                        <h:outputText value="Nama Kapal 1"/>
-                        <p:inputText value=""/>
-                        
-                        <h:outputText value="Nama Agen 2"/>
-                        <p:selectOneMenu>
-                            <f:selectItem itemLabel="PT RISKIA ARMANA NUSANTARA"/>
-                            <f:selectItems value="Agen 1"/>
-                            <f:selectItems value="Agen 1"/>
-                        </p:selectOneMenu>
-                        
-                        <h:outputText value="Nama Kapal 2"/>
-                        <p:inputText value=""/>
-                    </p:panelGrid>
+                    <p:panel header="KEDATANGAN">
+                        <p:panelGrid>
+                            <p:row>
+                                <p:column><p:outputLabel value="NOMOR" for="nomor"/> </p:column>
+                                <p:column colspan="7"><p:inputText value="" id="nomor" required="true" requiredMessage="NOMOR Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="KLASIFIKASI" for="klasifikasi"/> </p:column>
+                                <p:column colspan="7"><p:inputText value="" id="klasifikasi" required="true" requiredMessage="KLASIFIKASI Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="DOMISILI" for="domisili"/> </p:column>
+                                <p:column colspan="7"><p:inputText value="" id="domisili" required="true" requiredMessage="DOMISILI Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="TGL SURAT" for="tgl_surat"/> </p:column>
+                                <p:column colspan="7"><p:calendar id="tgl_surat" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="TGL SURAT Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column colspan="8"></p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="PEMILIK" for="pemilik"/> </p:column>
+                                <p:column colspan="7"><p:inputText value="" id="pemilik" required="true" requiredMessage="NAMA PEMILIK Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="AGEN" for="agen"/> </p:column>
+                                <p:column><p:inputText value="" id="agen" required="true" requiredMessage="NAMA AGEN Harus di Isi!"/> </p:column>
+                                <p:column><p:outputLabel value="KAPAL" for="kapal"/></p:column>
+                                <p:column colspan="5"><p:inputText value="" id="kapal" required="true" requiredMessage="NAMA KAPAL Harus di Isi!"/></p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="NAHKODA" for="nahkoda"/></p:column>
+                                <p:column><p:inputText value="" id="nahkoda" required="true" requiredMessage="NAMA NAHKODA Harus di Isi!"/></p:column>
+                                <p:column><p:outputLabel value="IMO" for="imo"/></p:column>
+                                <p:column colspan="5"><p:inputText value="" id="imo" required="true" requiredMessage="NO IMO Harus di Isi!"/></p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="GT" for="gt"/></p:column>
+                                <p:column><p:inputText value="" id="gt" required="true" requiredMessage="GT Harus di Isi!"/></p:column>
+                                <p:column><p:outputLabel value="DWT" for="dwt"/></p:column>
+                                <p:column colspan="5"><p:inputText value="" id="dwt" required="true" requiredMessage="DWT Harus di Isi!"/></p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="JENIS TRAYEK" for="jenis_trayek"/> </p:column>
+                                        <p:column><p:selectOneMenu id="jenis_trayek" value="">
+                                                <f:selectItem itemLabel="Pilih Agen" itemValue=""/>
+                                                <f:selectItem itemLabel="Tetap dan Teratur" itemValue=""/>
+                                                <f:selectItem itemLabel="Tidak Tetap dan Tidak Teratur" itemValue=""/>
+                                    </p:selectOneMenu></p:column>
+                                <p:column><p:outputLabel value="JENIS PELAYARAN" for="jenis_pelayaran"/> </p:column>
+                                <p:column colspan="5"><p:selectOneMenu id="jenis_pelayaran" value="">
+                                        <f:selectItem itemLabel="Pilih Agen" itemValue=""/>
+                                        <f:selectItem itemLabel="SIUPAL" itemValue=""/>
+                                        <f:selectItem itemLabel="SIOPSUS" itemValue=""/>
+                                        <f:selectItem itemLabel="SUIPER" itemValue=""/>
+                                    </p:selectOneMenu> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="TGL TIBA" for="tgl_tiba"/></p:column>
+                                <p:column><p:calendar id="tgl_tiba" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="TGL TIBA Harus di Isi!"/> </p:column>
+                                <p:column><p:outputLabel value="TGL BERANGKAT" for="tgl_berangkat"/> </p:column>
+                                <p:column colspan="5"><p:calendar id="tgl_berangkat" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="TGL BERANGKAT Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="PELABUHAN ASAL" for="pelabuhan_asal"/></p:column>
+                                <p:column><p:inputText value="" id="pelabuhan_asal" required="true" requiredMessage="PELABUHAN ASAL Harus di Isi!"/></p:column>
+                                <p:column><p:outputLabel value="PELABUHAN TIJUAN" for="pelabuhan_tujuan"/></p:column>
+                                <p:column colspan="5"><p:inputText value="" id="pelabuhan_tujuan" required="true" requiredMessage="PELABUHAN TIJUAN Harus di Isi!"/></p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="LOKASI LAMBAT / LABUH" for="lokasi_lambat_labuh"/></p:column>
+                                <p:column><p:inputText value="" id="lokasi_lambat_labuh" required="true" requiredMessage="LOKASI LAMBAT / LABUH Harus di Isi!"/></p:column>
+                                <p:column><p:outputLabel value="JENIS BARANG" for="jenis_barang"/> </p:column>
+                                <p:column colspan="5"><p:selectOneMenu id="jenis_barang" value="">
+                                        <f:selectItems itemLabel="Pilih Agen" itemValue=""/>
+                                        <f:selectItem itemLabel="BARANG UMUM(GC)" itemValue=""/>
+                                        <f:selectItem itemLabel="CURAH KERING" itemValue=""/>
+                                        <f:selectItem itemLabel="CURAH CAIR" itemValue=""/>
+                                        </p:selectOneMenu> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column colspan="8">BONGKAR(KONTAINER/NON KONTAINER</p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column>DETAIL BONGKAR</p:column>
+                                <p:column colspan="7">
+                                    <p:panelGrid columns="4">
+                                        <p:outputLabel value="ISI 20' / 40'"/>
+                                        <p:inputText value=""/>
+                                        <p:outputLabel value="BOXES"/>
+                                        <p:inputText value=""/>
+                                        
+                                        <p:outputLabel value="ISI 20' / 40'"/>
+                                        <p:inputText value=""/>
+                                        <p:outputLabel value="BOXES"/>
+                                        <p:inputText value=""/>
+                                    </p:panelGrid>
+                                </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column colspan="8">MUAT(KONTAINER/NON KONTAINER</p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column>DETAIL MUAT</p:column>
+                                <p:column colspan="7">
+                                    <p:panelGrid columns="4">
+                                        <p:outputLabel value="ISI 20' / 40'"/>
+                                        <p:inputText value=""/>
+                                        <p:outputLabel value="BOXES"/>
+                                        <p:inputText value=""/>
+                                        
+                                        <p:outputLabel value="ISI 20' / 40'"/>
+                                        <p:inputText value=""/>
+                                        <p:outputLabel value="BOXES"/>
+                                        <p:inputText value=""/>
+                                    </p:panelGrid>
+                                </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column colspan="8"><p:outputLabel value="JENIS BARANG"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column colspan="8">
+                                    <p:panelGrid>
+                                        <p:row>
+                                            <p:column><p:outputLabel value="URAIAN"/> </p:column>
+                                            <p:column><p:outputLabel value="BONGKAR"/></p:column>
+                                            <p:column><p:outputLabel value="MUAT"/></p:column>
+                                        </p:row>
+                                        
+                                        <p:row>
+                                            <p:column><p:outputLabel value="GENERAL CARGO (BARANG CAMPUR)"/></p:column>
+                                            <p:column><p:inputText value=""/> </p:column>
+                                            <p:column><p:inputText value=""/></p:column>
+                                        </p:row>
+                                        
+                                        <p:row>
+                                            <p:column><p:outputLabel value="BAG CARGO (BARANG KARUNG)"/></p:column>
+                                            <p:column><p:inputText value=""/> </p:column>
+                                            <p:column><p:inputText value=""/></p:column>
+                                        </p:row>
+                                        
+                                        <p:row>
+                                            <p:column><p:outputLabel value="BULK CARGO (BARANG CURAH)"/></p:column>
+                                            <p:column><p:inputText value=""/> </p:column>
+                                            <p:column><p:inputText value=""/></p:column>
+                                        </p:row>
+                                        
+                                        <p:row>
+                                            <p:column><p:outputLabel value="LIQUID CARGO (BARANG CAIR)"/></p:column>
+                                            <p:column><p:inputText value=""/> </p:column>
+                                            <p:column><p:inputText value=""/></p:column>
+                                        </p:row>
+                                        
+                                        <p:row>
+                                            <p:column><p:outputLabel value="BARANG BERBAHAYA"/></p:column>
+                                            <p:column><p:inputText value=""/> </p:column>
+                                            <p:column><p:inputText value=""/></p:column>
+                                        </p:row>
+                                        
+                                        <p:row>
+                                            <p:column><p:inputText value="" placeholder="ISI JENIS BARANG LAINNYA"/></p:column>
+                                            <p:column><p:inputText value=""/> </p:column>
+                                            <p:column><p:inputText value=""/></p:column>
+                                        </p:row>
+                                        
+                                        <p:row>
+                                            <p:column><p:outputLabel value="JUMLAH"/></p:column>
+                                            <p:column><p:inputText value=""/> </p:column>
+                                            <p:column><p:inputText value=""/></p:column>
+                                        </p:row>
+                                        
+                                        <p:row>
+                                            <p:column><p:outputLabel value="PENUMPANG NAIK / TURUN"/></p:column>
+                                            <p:column><p:inputText value=""/> </p:column>
+                                            <p:column><p:inputText value=""/></p:column>
+                                        </p:row>
+                                        
+                                        <p:row>
+                                            <p:column><p:outputLabel value="HEWAN NAIK / TURUN"/></p:column>
+                                            <p:column><p:inputText value=""/> </p:column>
+                                            <p:column><p:inputText value=""/></p:column>
+                                        </p:row>
+                                    </p:panelGrid>
+                                </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="NO SURAT UPT" for="no_surat_upt"/> </p:column>
+                                <p:column colspan="7"><p:inputText value="" id="no_surat_upt" required="true" requiredMessage="NO SURAT UPT Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="NAMA PEJABAT UPT" for="nama_pejabat_upt"/> </p:column>
+                                <p:column colspan="7"><p:inputText value="" id="nama_pejabat_upt" required="true" requiredMessage="NAMA PEJABAT UPT Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="JABATAN PEJABAT UPT" for="jabatan_pejabat_upt"/> </p:column>
+                                <p:column colspan="7"><p:inputText value="" id="jabatan_pejabat_upt" required="true" requiredMessage="JABATAN PEJABAT UPT Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="PIMPINAAN PERUSAHAAN" for="pimpinan_perusahaan"/> </p:column>
+                                <p:column colspan="7"><p:inputText value="" id="pimpinan_perusahaan" required="true" requiredMessage="PIMPINAAN PERUSAHAAN Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column colspan="8"><p:commandButton value="SAVE" id="save" icon="ui-icon-disk" /><p:commandButton value="RESET" type="reset" id="reset" icon="ui-icon-disk" /></p:column>
+                            </p:row>
+                        </p:panelGrid>
+                    </p:panel>
                 </h:form>
             </ui:define>
 
