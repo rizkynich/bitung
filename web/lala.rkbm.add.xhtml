@@ -13,79 +13,133 @@
             <ui:define name="content_detail">
                 <h:form>
                     <p:panel header="RENCANA KERJA BONGKAR MUAT">
-                        <p:fieldset legend="DATA KAPAL" style="margin-bottom:20px">
-                            <p:panelGrid>
-                                <p:row>
-                                    <p:column><p:outputLabel value="PEMILIK / OWNER" for="pemilik_owner"/></p:column>
-                                    <p:column colspan="3"><p:inputText value="" id="pemilik_owner" required="true" requiredMessage="PEMILIK / OWNER Harus di Isi!"/> </p:column>
-                                </p:row>
+                            <p:fieldset legend="DATA KAPAL" style="margin-bottom:20px">
+                                <p:panelGrid>
+                                    <p:row>
+                                        <p:column><p:outputLabel value="PEMILIK / OWNER" for="pemilik_owner"/></p:column>
+                                        <p:column colspan="3"><p:inputText value="" id="pemilik_owner" required="true" requiredMessage="PEMILIK / OWNER Harus di Isi!"/> </p:column>
+                                    </p:row>
                                 
-                                <p:row>
-                                    <p:column><p:outputLabel value="AGEN" for="agen"/></p:column>
-                                    <p:column colspan="3"><p:inputText value="" id="agen" required="true" requiredMessage="AGEN Harus di Isi!"/> </p:column>
-                                </p:row>
+                                    <p:row>
+                                        <p:column><p:outputLabel value="AGEN" for="agen"/></p:column>
+                                        <p:column colspan="3"><p:inputText value="" id="agen" required="true" requiredMessage="AGEN Harus di Isi!"/> </p:column>
+                                    </p:row>
                                 
-                                <p:row>
-                                    <p:column><p:outputLabel value="NAMA KAPAL" for="nama_kapal"/></p:column>
-                                    <p:column colspan="3"><p:inputText value="" id="nama_kapal" required="true" requiredMessage="NAMA KAPAL Harus di Isi!"/> </p:column>
-                                </p:row>
+                                    <p:row>
+                                        <p:column><p:outputLabel value="NAMA KAPAL" for="nama_kapal"/></p:column>
+                                        <p:column colspan="3"><p:inputText value="" id="nama_kapal" required="true" requiredMessage="NAMA KAPAL Harus di Isi!"/> </p:column>
+                                    </p:row>
                                 
-                                <p:row>
-                                    <p:column><p:outputLabel value="PENUNJUKAN PBM" for="penunjukan_pbm"/></p:column>
-                                    <p:column colspan="3"><p:inputText value="" id="penunjukan_pbm" required="true" requiredMessage="PENUNJUKAN PBM Harus di Isi!"/> </p:column>
-                                </p:row>
+                                    <p:row>
+                                        <p:column><p:outputLabel value="PENUNJUKAN PBM" for="penunjukan_pbm"/></p:column>
+                                        <p:column colspan="3"><p:inputText value="" id="penunjukan_pbm" required="true" requiredMessage="PENUNJUKAN PBM Harus di Isi!"/> </p:column>
+                                    </p:row>
                                 
-                                <p:row>
-                                    <p:column><p:outputLabel value="SURAT PENUNJUKAN PBM" for="surat_penunjukan_pbm"/></p:column>
-                                    <p:column colspan="3"><p:inputText value="" id="surat_penunjukan_pbm" required="true" requiredMessage="SURAT PENUNJUKAN PBM Harus di Isi!"/> </p:column>
-                                </p:row>
+                                    <p:row>
+                                        <p:column><p:outputLabel value="SURAT PENUNJUKAN PBM" for="surat_penunjukan_pbm"/></p:column>
+                                        <p:column colspan="3"><p:inputText value="" id="surat_penunjukan_pbm" required="true" requiredMessage="SURAT PENUNJUKAN PBM Harus di Isi!"/> </p:column>
+                                    </p:row>
                                 
-                                <p:row>
-                                    <p:column><p:outputLabel value="TGL TIBA / BERANGKAT" for="tgl_tiba_berangkat"/> </p:column>
-                                    <p:column colspan="3"><p:calendar id="tgl_tiba_berangkat" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="TGL TIBA / BERANGKAT Harus di Isi!"/> </p:column>
-                                </p:row>
-                            </p:panelGrid>
-                        </p:fieldset>
+                                    <p:row>
+                                        <p:column><p:outputLabel value="TGL TIBA / BERANGKAT" for="tgl_tiba_berangkat"/> </p:column>
+                                        <p:column colspan="3"><p:calendar id="tgl_tiba_berangkat" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="TGL TIBA / BERANGKAT Harus di Isi!"/> </p:column>
+                                    </p:row>
+                                </p:panelGrid>
+                            </p:fieldset>
                         
-                        <p:fieldset legend="KEGIATAN" style="margin-bottom:20px">
-                            <p:panelGrid>
-                                <p:row>
-                                    <p:column><p:outputLabel value="RENCANA BONGKAR" for="rencana_bongkar"/></p:column>
-                                    <p:column colspan="3"><p:inputText value="" id="rencana_bongkar" required="true" requiredMessage="RENCANA BONGKAR Harus di Isi!"/> </p:column>
-                                </p:row>
+                            <p:fieldset legend="KEGIATAN" style="margin-bottom:20px">
+                                <p:panelGrid>
+                                    <p:row>
+                                        <p:column><p:outputLabel value="RENCANA BONGKAR" for="rencana_bongkar"/></p:column>
+                                        <p:column colspan="3"><p:inputText value="" id="rencana_bongkar" required="true" requiredMessage="RENCANA BONGKAR Harus di Isi!"/> </p:column>
+                                    </p:row>
                                 
-                                <p:row>
-                                    <p:column><p:outputLabel value="RENCANA MUAT" for="rencana_muat"/></p:column>
-                                    <p:column colspan="3"><p:inputText value="" id="rencana_muat" required="true" requiredMessage="RENCANA MUAT Harus di Isi!"/> </p:column>
-                                </p:row>
+                                    <p:row>
+                                        <p:column><p:outputLabel value="RENCANA MUAT" for="rencana_muat"/></p:column>
+                                        <p:column colspan="3"><p:inputText value="" id="rencana_muat" required="true" requiredMessage="RENCANA MUAT Harus di Isi!"/> </p:column>
+                                    </p:row>
                                 
-                                <p:row>
-                                    <p:column><p:outputLabel value="MULAI BONGKAR" for="mulai_bongkar"/> </p:column>
-                                    <p:column><p:calendar id="mulai_bongkar" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="MULAI BONGKAR Harus di Isi!"/> </p:column>
-                                    <p:column><p:outputLabel value="MULAI MUAT" for="muali_muat"/> </p:column>
-                                    <p:column><p:calendar id="muali_muat" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="MULAI MUAT Harus di Isi!"/> </p:column> 
-                                </p:row>
+                                    <p:row>
+                                        <p:column><p:outputLabel value="MULAI BONGKAR" for="mulai_bongkar"/> </p:column>
+                                        <p:column><p:calendar id="mulai_bongkar" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="MULAI BONGKAR Harus di Isi!"/> </p:column>
+                                        <p:column><p:outputLabel value="MULAI MUAT" for="muali_muat"/> </p:column>
+                                        <p:column><p:calendar id="muali_muat" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="MULAI MUAT Harus di Isi!"/> </p:column> 
+                                    </p:row>
                                 
-                                <p:row>
-                                    <p:column><p:outputLabel value="SELESAI BONGKAR" for="selesai_bongkar"/> </p:column>
-                                    <p:column><p:calendar id="selesai_bongkar" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="SELESAI BONGKAR Harus di Isi!"/> </p:column>
-                                    <p:column><p:outputLabel value="SELESAI MUAT" for="selesai_muat"/> </p:column>
-                                    <p:column><p:calendar id="selesai_muat" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="SELESAI MUAT Harus di Isi!"/> </p:column> 
-                                </p:row>
+                                    <p:row>
+                                        <p:column><p:outputLabel value="SELESAI BONGKAR" for="selesai_bongkar"/> </p:column>
+                                        <p:column><p:calendar id="selesai_bongkar" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="SELESAI BONGKAR Harus di Isi!"/> </p:column>
+                                        <p:column><p:outputLabel value="SELESAI MUAT" for="selesai_muat"/> </p:column>
+                                        <p:column><p:calendar id="selesai_muat" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="SELESAI MUAT Harus di Isi!"/> </p:column> 
+                                    </p:row>
                             
-                                <p:row>
-                                    <p:column><p:outputLabel value="JUMLAH TKBM BONGKAR" for="jumlah_tkbm_bongkar"/></p:column>
-                                    <p:column><p:inputText value="" id="jumlah_tkbm_bongkar" required="true" requiredMessage="JUMLAH TKBM BONGKAR Harus di Isi!"/> </p:column>
-                                    <p:column><p:outputLabel value="JUMLAH TKBM MUAT" for="jumlah_tkbm_muat"/></p:column>
-                                    <p:column><p:inputText value="" id="jumlah_tkbm_muat" required="true" requiredMessage="JUMLAH TKBM MUAT Harus di Isi!"/> </p:column>
-                                </p:row>
+                                    <p:row>
+                                        <p:column><p:outputLabel value="JUMLAH TKBM BONGKAR" for="jumlah_tkbm_bongkar"/></p:column>
+                                        <p:column><p:inputText value="" id="jumlah_tkbm_bongkar" required="true" requiredMessage="JUMLAH TKBM BONGKAR Harus di Isi!"/> </p:column>
+                                        <p:column><p:outputLabel value="JUMLAH TKBM MUAT" for="jumlah_tkbm_muat"/></p:column>
+                                        <p:column><p:inputText value="" id="jumlah_tkbm_muat" required="true" requiredMessage="JUMLAH TKBM MUAT Harus di Isi!"/> </p:column>
+                                    </p:row>
                                 
-                                <p:row>
-                                    <p:column><p:outputLabel value="JUMLAH KRK" for="jumlah_krk"/></p:column>
-                                    <p:column colspan="3"><p:inputText value="" id="jumlah_krk" required="true" requiredMessage="RENCANA MUAT Harus di Isi!"/> </p:column>
-                                </p:row>
-                            </p:panelGrid>
-                        </p:fieldset>
+                                    <p:row>
+                                        <p:column><p:outputLabel value="JUMLAH KRK" for="jumlah_krk"/></p:column>
+                                        <p:column colspan="3"><p:inputText value="" id="jumlah_krk" required="true" requiredMessage="RENCANA MUAT Harus di Isi!"/> </p:column>
+                                    </p:row>
+                                </p:panelGrid>
+                            </p:fieldset>
+                        
+                            <p:fieldset legend="SISTEM PEKERJAAN" style="margin-bottom: 20px">
+                                <p:panelGrid>
+                                    <p:row>
+                                        <p:column rowspan="2" style="text-align: center;"><p:outputLabel value="CARA"/> </p:column>
+                                        <p:column style="text-align: center;"><p:outputLabel value="JENIS"/> </p:column>
+                                        <p:column colspan="3" style="text-align: center;"><p:outputLabel value="JUMLAH TON/M3/TON"/> </p:column>
+                                        <p:column rowspan="3" style="text-align: center;"><p:commandButton value="ADD" id="save" icon="ui-icon-disk" /></p:column>
+                                    </p:row>
+                                
+                                    <p:row>
+                                        <p:column style="text-align: center;"><p:outputLabel value="BARANG"/> </p:column>
+                                        <p:column style="text-align: center;"><p:outputLabel value="BONGKAR"/> </p:column>
+                                        <p:column style="text-align: center;"><p:outputLabel value="MUAT"/> </p:column>
+                                        <p:column style="text-align: center;"><p:outputLabel value="JUMLAH"/> </p:column>
+                                    </p:row>
+                                
+                                    <p:row>
+                                        <p:column><p:inputText value=""/> </p:column>
+                                        <p:column><p:inputText value=""/> </p:column>
+                                        <p:column><p:inputText value=""/> </p:column>
+                                        <p:column><p:inputText value=""/> </p:column>
+                                        <p:column><p:inputText value=""/> </p:column>
+                                    </p:row>
+                                </p:panelGrid>
+                            </p:fieldset>
+                                
+                        <p:panelGrid>
+                                    <p:row>
+                                        <p:column><p:outputLabel value="NO REGISTRASI" for="no_registrasi"/></p:column>
+                                        <p:column colspan="4"><p:inputText value="" id="no_registrasi" required="true" requiredMessage="NO REGISTRASI Harus di Isi!"/> </p:column>
+                                    </p:row>
+                                
+                                    <p:row>
+                                        <p:column><p:outputLabel value="MENGETAHUI" for="mengetahui"/></p:column>
+                                        <p:column colspan="4"><p:inputTextarea id="mengetahui" widgetVar="editorWidget" value="" cols="50" required="true" requiredMessage="MENGETAHUI Harus di Isi!"/> </p:column>
+                                    </p:row>
+                                
+                                    <p:row>
+                                        <p:column><p:outputLabel value="PEJABAT" for="pejabat"/></p:column>
+                                        <p:column colspan="4"><p:inputText value="" id="pejabat" required="true" requiredMessage="PEJABAT Harus di Isi!"/> </p:column>
+                                    </p:row>
+                                
+                                    <p:row>
+                                        <p:column><p:outputLabel value="NIP" for="nip"/></p:column>
+                                        <p:column colspan="4"><p:inputText value="" id="nip" required="true" requiredMessage="NIP Harus di Isi!"/> </p:column>
+                                    </p:row>
+                            
+                                    <p:row>
+                                        <p:column colspan="4"><p:commandButton value="SAVE" id="save" icon="ui-icon-disk" /><p:commandButton value="RESET" type="reset" id="reset" icon="ui-icon-disk" /></p:column>
+                                    </p:row>
+                        </p:panelGrid>
+                                    
+                        
                     </p:panel>
                 </h:form>
             </ui:define>
