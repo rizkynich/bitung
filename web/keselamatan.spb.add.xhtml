@@ -14,7 +14,89 @@
                 <h:form>
                     <p:panel header="SURAT PERSETUJUAN BERLAYAR">
                         <p:panelGrid>
+                            <p:row>
+                                <p:column><p:outputLabel value="NO REGISTRASI" for="no_registrasi"/></p:column>
+                                <p:column><p:inputText value="" id="no_registrasi" required="true" requiredMessage="NO SURAT KELUAR Harus di Isi!"/> </p:column>
+                                <p:column><p:outputLabel value="TGL SURAT KELUAR" for="tgl_surat_keluar"/> </p:column>
+                                <p:column><p:calendar id="tgl_surat_keluar" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="TANGGAL SURAT KELUAR Harus di Isi!"/> </p:column>
+                            </p:row>
                             
+                            <p:row>
+                                <p:column><p:outputLabel value="AGEN" for="agen"/> </p:column>
+                                        <p:column><p:selectOneMenu id="agen" value="" filter="true">
+                                                <f:selectItem itemLabel="Pilih Agen" itemValue=""/>
+                                    </p:selectOneMenu></p:column>
+                                <p:column><p:outputLabel value="KAPAL" for="kapal"/> </p:column>
+                                <p:column><p:selectOneMenu id="kapal" value="">
+                                        <f:selectItem itemLabel="Pilih Agen" itemValue=""/>
+                                    </p:selectOneMenu> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="TONNASE KOTOR" for="tonnase_kotor"/></p:column>
+                                <p:column><p:inputText value="" id="tonnase_kotor" required="true" requiredMessage="TONNASE KOTOR Harus Di Isi!"/></p:column>
+                                <p:column><p:outputLabel value="BENDERA KEBANGSAAN" for="bendera_kebangsaan"/></p:column>
+                                <p:column><p:inputText value="" id="bendera_kebangsaan" required="true" requiredMessage="BENDERA KEBANGSAAN Harus Di Isi!"/></p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="NAHKODA" for="nahkoda"/></p:column>
+                                <p:column><p:inputText value="" id="nahkoda" required="true" requiredMessage="NAHKODA Harus Di Isi!"/></p:column>
+                                <p:column><p:outputLabel value="NOMOR IMO" for="no_imo"/></p:column>
+                                <p:column><p:inputText value="" id="no_imo" required="true" requiredMessage="NOMOR IMO Harus Di Isi!"/></p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="NAMA PANGGILAN" for="nama_panggilan"/></p:column>
+                                <p:column colspan="3"><p:inputText value="" id="nama_panggilan" required="true" requiredMessage="NAMA PANGGILAN Harus Di Isi!"/></p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column colspan="4"></p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="TANGGAL /JAM" for="tanggal_jam"/> </p:column>
+                                <p:column><p:calendar id="tanggal_jam" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="TANGGAL /JAM Harus di Isi!"/> </p:column>
+                                <p:column><p:outputLabel value="BERTOLAK DARI" for="bertolak_dari"/></p:column>
+                                <p:column><p:inputText value="" id="bertolak_dari" required="true" requiredMessage="BERTOLAK DARI Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="PADA TANGGAL /JAM" for="pada_tanggal_jam"/> </p:column>
+                                <p:column><p:calendar id="pada_tanggal_jam" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="PADA TANGGAL /JAM Harus di Isi!"/> </p:column>
+                                <p:column><p:outputLabel value="PELABUHAN TUJUAN" for="pelbuhan_tujuan"/></p:column>
+                                <p:column><p:inputText value="" id="pelbuhan_tujuan" required="true" requiredMessage="PELABUHAN TUJUAN Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="JUMLAH AWAK" for="jumlah_awak"/></p:column>
+                                <p:column><p:inputText value="" id="jumlah_awak" required="true" requiredMessage="JUMLAH AWAK Harus Di Isi!"/></p:column>
+                                <p:column><p:outputLabel value="DENGAN MUATAN" for="dengan_muatan"/></p:column>
+                                <p:column><p:inputText value="" id="dengan_muatan" required="true" requiredMessage="DENGAN MUATAN Harus Di Isi!"/></p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column colspan="4"></p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                    <p:column><p:outputLabel value="TEMPAT TERTIB SPB" for="tempat_tertib_spb"/></p:column>
+                                <p:column><p:inputText value="" id="tempat_tertib_spb" required="true" requiredMessage="TEMPAT TERTIB SPB Harus di Isi!"/> </p:column>
+                                <p:column><p:outputLabel value="TANGGAL PENERBITAN" for="tanggal_penerbitan"/> </p:column>
+                                <p:column><p:calendar id="tanggal_penerbitan" pattern="dd/MM/yyyy HH:mm:ss" navigator="true" required="true" requiredMessage="TANGGAL PENERBITAN Harus di Isi!"/> </p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column><p:outputLabel value="PENANDATANGAN" for="penandatangan"/></p:column>
+                                <p:column><p:inputText value="" id="penandatangan" required="true" requiredMessage="PENANDATANGAN Harus Di Isi!"/></p:column>
+                                <p:column><p:outputLabel value="NIP" for="nip"/></p:column>
+                                <p:column><p:inputText value="" id="nip" required="true" requiredMessage="NIP Harus Di Isi!"/></p:column>
+                            </p:row>
+                            
+                            <p:row>
+                                <p:column colspan="4"><p:commandButton value="SAVE" id="save" icon="ui-icon-disk" /><p:commandButton value="RESET" type="reset" id="reset" icon="ui-icon-disk" /></p:column>
+                            </p:row>
                         </p:panelGrid>
                     </p:panel>
                 </h:form>

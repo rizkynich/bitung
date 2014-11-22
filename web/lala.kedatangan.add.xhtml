@@ -45,9 +45,13 @@
                             
                             <p:row>
                                 <p:column><p:outputLabel value="AGEN" for="agen"/> </p:column>
-                                <p:column><p:inputText value="" id="agen" required="true" requiredMessage="NAMA AGEN Harus di Isi!"/> </p:column>
-                                <p:column><p:outputLabel value="KAPAL" for="kapal"/></p:column>
-                                <p:column colspan="5"><p:inputText value="" id="kapal" required="true" requiredMessage="NAMA KAPAL Harus di Isi!"/></p:column>
+                                        <p:column><p:selectOneMenu id="agen" value="" filter="true">
+                                                <f:selectItem itemLabel="Pilih Agen" itemValue=""/>
+                                    </p:selectOneMenu></p:column>
+                                <p:column><p:outputLabel value="KAPAL" for="kapal"/> </p:column>
+                                <p:column colspan="6"><p:selectOneMenu id="kapal" value="">
+                                        <f:selectItem itemLabel="Pilih Agen" itemValue=""/>
+                                </p:selectOneMenu> </p:column>
                             </p:row>
                             
                             <p:row>
@@ -67,16 +71,16 @@
                             <p:row>
                                 <p:column><p:outputLabel value="JENIS TRAYEK" for="jenis_trayek"/> </p:column>
                                         <p:column><p:selectOneMenu id="jenis_trayek" value="">
-                                                <f:selectItem itemLabel="Pilih Agen" itemValue=""/>
-                                                <f:selectItem itemLabel="Tetap dan Teratur" itemValue=""/>
-                                                <f:selectItem itemLabel="Tidak Tetap dan Tidak Teratur" itemValue=""/>
+                                                <f:selectItem itemLabel="Pilih Agen" itemValue="1"/>
+                                                <f:selectItem itemLabel="Tetap dan Teratur" itemValue="2"/>
+                                                <f:selectItem itemLabel="Tidak Tetap dan Tidak Teratur" itemValue="3"/>
                                     </p:selectOneMenu></p:column>
                                 <p:column><p:outputLabel value="JENIS PELAYARAN" for="jenis_pelayaran"/> </p:column>
                                 <p:column colspan="5"><p:selectOneMenu id="jenis_pelayaran" value="">
-                                        <f:selectItem itemLabel="Pilih Agen" itemValue=""/>
-                                        <f:selectItem itemLabel="SIUPAL" itemValue=""/>
-                                        <f:selectItem itemLabel="SIOPSUS" itemValue=""/>
-                                        <f:selectItem itemLabel="SUIPER" itemValue=""/>
+                                        <f:selectItem itemLabel="Pilih Agen" itemValue="1"/>
+                                        <f:selectItem itemLabel="SIUPAL" itemValue="2"/>
+                                        <f:selectItem itemLabel="SIOPSUS" itemValue="3"/>
+                                        <f:selectItem itemLabel="SUIPER" itemValue="4"/>
                                     </p:selectOneMenu> </p:column>
                             </p:row>
                             
@@ -99,10 +103,10 @@
                                 <p:column><p:inputText value="" id="lokasi_lambat_labuh" required="true" requiredMessage="LOKASI LAMBAT / LABUH Harus di Isi!"/></p:column>
                                 <p:column><p:outputLabel value="JENIS BARANG" for="jenis_barang"/> </p:column>
                                 <p:column colspan="5"><p:selectOneMenu id="jenis_barang" value="">
-                                        <f:selectItems itemLabel="Pilih Agen" itemValue=""/>
-                                        <f:selectItem itemLabel="BARANG UMUM(GC)" itemValue=""/>
-                                        <f:selectItem itemLabel="CURAH KERING" itemValue=""/>
-                                        <f:selectItem itemLabel="CURAH CAIR" itemValue=""/>
+                                        <f:selectItem itemLabel="Pilih Agen" itemValue="1"/>
+                                        <f:selectItem itemLabel="BARANG UMUM(GC)" itemValue="2"/>
+                                        <f:selectItem itemLabel="CURAH KERING" itemValue="3"/>
+                                        <f:selectItem itemLabel="CURAH CAIR" itemValue="4"/>
                                         </p:selectOneMenu> </p:column>
                             </p:row>
                             
