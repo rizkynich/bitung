@@ -1,0 +1,365 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./templates/template_logged.xhtml">
+
+            <ui:define name="content_detail">
+                <h:form>
+                    <p:tabView>
+                        <p:tab title="SOLAS">
+                            <p:panelGrid>
+                                <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="solas_jenis_sertifikat" value="Jenis Sertifikat"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="solas_jenis_sertifikat"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:outputLabel for="solas_masa_berlaku" value="Masa Berlaku"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:calendar id="solas_masa_berlaku" navigator="true"/>
+                                    </p:column>
+                                </p:row>
+                                
+                                <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="solas_nama_pemilik_kapal" value="Nama Pemilik Kapal"/>
+                                    </p:column>
+                                    <p:column colspan="3">
+                                        <p:inputText id="solas_nama_pemilik_kapal"/>
+                                    </p:column>
+                                    
+                                </p:row>
+                                
+                                <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="solas_nama_kapal" value="Nama Kapal"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="solas_nama_kapal"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:outputLabel for="solas_tempat_pemeriksaan" value="Tempat Pemeriksaan"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="solas_tempat_pemeriksaan"/>
+                                    </p:column>
+                                </p:row>
+                                
+                                <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="solas_nama_eks_kapal" value="Nama Eks Kapal"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="solas_nama_eks_kapal"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:outputLabel for="solas_tanggal_selesai_pemeriksaan" value="Tanggal Selesai Pemeriksaan"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:calendar id="solas_tanggal_selesai_pemeriksaan" navigator="true"/><br/>
+                                        <p:selectBooleanCheckbox value="1" /> Tidak di tampilkan
+                                    </p:column>
+                                    
+                                </p:row>
+                                
+                                <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="solas_angka_huruf_pengenal" value="Angka / Huruf Pengenal"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="solas_angka_huruf_pengenal"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:outputLabel for="solas_diterbitkan_di" value="Diterbitkan di"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="solas_diterbitkan_di"/>
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="solas_pelabuhan_pendaftaran" value="Pelabuhan Pendaftaran"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="solas_pelabuhan_pendaftaran"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:outputLabel for="solas_diterbitkan_tanggal" value="Diterbitkan Tanggal"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:calendar id="solas_diterbitkan_tanggal" navigator="true"/><br/>
+                                        <p:selectBooleanCheckbox value="1" /> Tidak di tampilkan
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="solas_jenis_kapal" value="Jenis Kapal"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:selectOneMenu id="solas_jenis_kapal" value="">
+                                            <f:selectItem itemLabel="Pilih Jenis Kapal" itemValue=""/>
+                                        </p:selectOneMenu> 
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="solas_isi_kotor" value="Isi Kotor"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="solas_isi_kotor"/>
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column><p:outputLabel value="Bobot mati Kapal" for="bobot_mati_kapal"/> </p:column>
+                                    <p:column><p:inputText value="" id="bobot_mati_kapal" required="true" requiredMessage="Bobot mati Kapal Harus di Isi!"/> </p:column>
+                                    <p:column rowspan="2"><p:outputLabel value="CATATAN" for="catatan"/> </p:column>
+                                    <p:column rowspan="2"><p:inputTextarea id="catatan" widgetVar="editorWidget" value="" cols="50" required="true" requiredMessage="CATATAN Harus di Isi!"/> </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column><p:outputLabel value="Panjang Kapal" for="panjang_kapal"/> </p:column>
+                                    <p:column><p:inputText value="" id="panjang_kapal" required="true" requiredMessage="Panjang Kapal Harus di Isi!"/> </p:column>
+                                </p:row>
+                                  <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="solas_nomor_imo" value="Nomor IMO"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="solas_nomor_imo"/>
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="solas_tahun_peletakan_lunas" value="Tahun Peletakan Lunas"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="solas_tahun_peletakan_lunas"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:outputLabel for="solas_no_pup" value="No PUP"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="solas_no_pup"/>
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column colspan="2">
+                                        <p:panelGrid columns="1">
+                                            <p:selectOneRadio id="console" value="">
+                                                <f:selectItem itemLabel="Telah / " itemValue="1" />
+                                                <f:selectItem itemLabel="Tidak mengalami perubahan bentuk dan susunan" itemValue="2" />
+                                            </p:selectOneRadio>
+                                            <p:selectOneRadio id="console" value="">
+                                                <f:selectItem itemLabel="Aturan II-2/17 / " itemValue="1" />
+                                                <f:selectItem itemLabel="Aturan III/38" itemValue="2" />
+                                            </p:selectOneRadio>
+                                            <p:selectOneRadio id="console" value="">
+                                                <f:selectItem itemLabel="Ditambah / " itemValue="1" />
+                                                <f:selectItem itemLabel="Tidak Ditambah dokumen pada catatan sertifikat ini" itemValue="2" />
+                                            </p:selectOneRadio>
+                                            <p:selectOneRadio id="console" value="">
+                                                <f:selectItem itemLabel="Proteksi kebakaran / " itemValue="1" />
+                                                <f:selectItem itemLabel="Penyelamatan Diri" itemValue="2" />
+                                            </p:selectOneRadio>
+                                            <p:selectOneRadio id="console" value="">
+                                                <f:selectItem itemLabel="Telah / " itemValue="1" />
+                                                <f:selectItem itemLabel="Tidak diterbitkan Sertifikat Pembebasan" itemValue="2" />
+                                            </p:selectOneRadio>
+                                        </p:panelGrid>
+                                    </p:column>
+                                    <p:column>Mengetahui</p:column>
+                                    <p:column>
+                                        <p:inputTextarea cols="50"/><br/>
+                                        <p:inputText/><br/>
+                                        <p:inputTextarea cols="50"/>
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column colspan="4"><p:commandButton value="SAVE" id="save" icon="ui-icon-disk" /><p:commandButton value="RESET" type="reset" id="reset" icon="ui-icon-disk" /></p:column>
+                                </p:row>
+                            </p:panelGrid>
+                        </p:tab>
+                        <p:tab title="NON - SOLAS">
+                            <p:panelGrid>
+                                    <p:row>
+                                      <p:column>
+                                        <p:outputLabel for="non_solas_jenis_sertifikat" value="Jenis Sertifikat"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="non_solas_jenis_sertifikat"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:outputLabel for="non_solas_masa_berlaku" value="Masa Berlaku"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:calendar id="non_solas_masa_berlaku" navigator="true"/>
+                                    </p:column>
+                                </p:row>
+                                
+                                <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="non_solas_nama_pemilik_kapal" value="Nama Pemilik Kapal"/>
+                                    </p:column>
+                                    <p:column colspan="3">
+                                        <p:inputText id="non_solas_nama_pemilik_kapal"/>
+                                    </p:column>
+                                    
+                                </p:row>
+                                
+                                <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="non_solas_nama_kapal" value="Nama Kapal"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="non_solas_nama_kapal"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:outputLabel for="non_solas_tempat_pemeriksaan" value="Tempat Pemeriksaan"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="non_solas_tempat_pemeriksaan"/>
+                                    </p:column>
+                                </p:row>
+                                
+                                <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="non_solas_nama_eks_kapal" value="Nama Eks Kapal"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="non_solas_nama_eks_kapal"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:outputLabel for="non_solas_tanggal_selesai_pemeriksaan" value="Tanggal Selesai Pemeriksaan"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:calendar id="non_solas_tanggal_selesai_pemeriksaan" navigator="true"/><br/>
+                                        <p:selectBooleanCheckbox value="1" /> Tidak di tampilkan
+                                    </p:column>
+                                    
+                                </p:row>
+                                
+                                <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="non_solas_angka_huruf_pengenal" value="Angka / Huruf Pengenal"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="non_solas_angka_huruf_pengenal"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:outputLabel for="non_solas_diterbitkan_di" value="Diterbitkan di"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="non_solas_diterbitkan_di"/>
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="non_solas_pelabuhan_pendaftaran" value="Pelabuhan Pendaftaran"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="non_solas_pelabuhan_pendaftaran"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:outputLabel for="non_solas_diterbitkan_tanggal" value="Diterbitkan Tanggal"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:calendar id="non_solas_diterbitkan_tanggal" navigator="true"/><br/>
+                                        <p:selectBooleanCheckbox value="1" /> Tidak di tampilkan
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="non_solas_jenis_kapal" value="Jenis Kapal"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:selectOneMenu id="non_solas_jenis_kapal" value="">
+                                            <f:selectItem itemLabel="Pilih Jenis Kapal" itemValue=""/>
+                                        </p:selectOneMenu> 
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="non_solas_isi_kotor" value="Isi Kotor"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="non_solas_isi_kotor"/>
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column><p:outputLabel value="Bobot mati Kapal" for="bobot_mati_kapal"/> </p:column>
+                                    <p:column><p:inputText value="" id="bobot_mati_kapal" required="true" requiredMessage="Bobot mati Kapal Harus di Isi!"/> </p:column>
+                                    <p:column rowspan="2"><p:outputLabel value="CATATAN" for="catatan"/> </p:column>
+                                    <p:column rowspan="2"><p:inputTextarea id="catatan" widgetVar="editorWidget" value="" cols="50" required="true" requiredMessage="CATATAN Harus di Isi!"/> </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column><p:outputLabel value="Panjang Kapal" for="panjang_kapal"/> </p:column>
+                                    <p:column><p:inputText value="" id="panjang_kapal" required="true" requiredMessage="Panjang Kapal Harus di Isi!"/> </p:column>
+                                </p:row>
+                                  <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="non_solas_nomor_imo" value="Nomor IMO"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="non_solas_nomor_imo"/>
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column>
+                                        <p:outputLabel for="non_solas_tahun_peletakan_lunas" value="Tahun Peletakan Lunas"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="non_solas_tahun_peletakan_lunas"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:outputLabel for="non_solas_no_pup" value="No PUP"/>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="non_solas_no_pup"/>
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column colspan="2">
+                                        <p:panelGrid columns="1">
+                                            <p:selectOneRadio id="console" value="">
+                                                <f:selectItem itemLabel="Telah / " itemValue="1" />
+                                                <f:selectItem itemLabel="Tidak mengalami perubahan bentuk dan susunan" itemValue="2" />
+                                            </p:selectOneRadio>
+                                            <p:selectOneRadio id="console" value="">
+                                                <f:selectItem itemLabel="Ditambah / " itemValue="1" />
+                                                <f:selectItem itemLabel="Tidak Ditambah dokumen pada catatan sertifikat ini" itemValue="2" />
+                                            </p:selectOneRadio>
+                                            <p:selectOneRadio id="console" value="">
+                                                <f:selectItem itemLabel="Telah / " itemValue="1" />
+                                                <f:selectItem itemLabel="Tidak diterbitkan Sertifikat Pembebasan" itemValue="2" />
+                                            </p:selectOneRadio>
+                                        </p:panelGrid>
+                                    </p:column>
+                                    <p:column>Mengetahui</p:column>
+                                    <p:column>
+                                        <p:inputTextarea cols="50"/><br/>
+                                        <p:inputText/><br/>
+                                        <p:inputTextarea cols="50"/>
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column colspan="4"><p:commandButton value="SAVE" id="save" icon="ui-icon-disk" /><p:commandButton value="RESET" type="reset" id="reset" icon="ui-icon-disk" /></p:column>
+                                </p:row>
+                            </p:panelGrid>
+                        </p:tab>
+                    </p:tabView>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+ 
+    </body>
+</html>
